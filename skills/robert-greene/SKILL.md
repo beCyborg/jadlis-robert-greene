@@ -1,5 +1,5 @@
 ---
-name: green-advisor
+name: robert-greene
 user-invocable: true
 description: |
   AI-советник на основе 5 книг Robert Greene. Анализирует ситуации и решения через призму
@@ -14,10 +14,10 @@ description: |
   переговоры, конфликт, мастерство, развитие навыков, человеческая природа, манипуляции,
   социальный интеллект, политические игры, Robert Greene, 48 законов власти,
   законы человеческой природы, 33 стратегии войны, мастерство, искусство обольщения.
-  Invoke via /advisors:green-advisor with the situation.
+  Invoke via /robert-greene with the situation.
   DO NOT TRIGGER when: a hard decision needing a full council verdict
-  (use /advisors:adv-Decision); a stuck sales deal or a call to review
-  (use /advisors:adv-sales); marketing and audience growth (use /advisors:adv-influence).
+  (use /advisor-decision); a stuck sales deal or a call to review
+  (use /advisor-sales); marketing and audience growth (use /advisor-influence).
 argument-hint: "<the situation: power dynamics, conflict, career move, negotiation>"
 allowed-tools:
   - Read
@@ -35,7 +35,7 @@ model: opus
 
 ```
 PLUGIN_ROOT = ${CLAUDE_PLUGIN_ROOT}
-MEMORY_DIR  = ${user_config.ADVISORS_MEMORY_DIR}
+MEMORY_DIR  = ${user_config.MEMORY_DIR}
 PROFILE     = {PROFILE}
 ```
 
@@ -43,7 +43,7 @@ Run this gate before anything else, every time:
 
 1. `MEMORY_DIR` empty, or the literal text `${user_config` visible in it → say so and continue
    **without memory**: this advisor still works, it just will not remember the session.
-   To fix it: `/plugin` → advisors → settings → `ADVISORS_MEMORY_DIR`, or
+   To fix it: `/plugin` → robert-greene → settings → `MEMORY_DIR`, or
    `/plugin configure advisors@<marketplace>`.
 2. Path starts with `~/` → replace `~` with `$HOME` before any write.
 3. Unpack the skeleton once (idempotent, never overwrites existing files):
@@ -200,7 +200,7 @@ Always respond in the same language as the user's query. If Russian — respond 
 подготовки; запись идёт молча после 4-шагового анализа, отдельным шагом совета не является.
 
 Формат файла, лимиты секций, компакция, правила append-vs-overwrite и приватность —
-`@${CLAUDE_PLUGIN_ROOT}/skills/green-advisor/references/memory-protocol.md`.
+`@${CLAUDE_PLUGIN_ROOT}/skills/robert-greene/references/memory-protocol.md`.
 
 > [!warning] Read-before-write
 > Перед записью **перечитать** файл: копия, загруженная в начале сессии, могла устареть —
