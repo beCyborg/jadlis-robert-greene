@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "robert-greene",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "displayName": "Советник по пяти книгам Роберта Грина",
   "description": "Анализ ситуаций и решений через 140+ принципов из The 48 Laws of Power, The Art of Seduction, The 33 Strategies of War, Mastery и The Laws of Human Nature; каждый совет привязан к книге и закону тегом.",
   "author": {
