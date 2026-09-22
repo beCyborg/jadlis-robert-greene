@@ -5,6 +5,19 @@
 
 ## [Unreleased]
 
+## [1.0.3] — 2026-09-22 — Переход на Opus 5.5 / Switch to Opus 5.5
+
+### Для человека
+
+- Советник теперь работает на новой модели Opus 5.5 с окном контекста в 1 млн токенов.
+- Требует Claude Code ≥ 2.1.280: более старые версии могут не знать эту модель — сначала обновите Claude Code, потом плагин.
+- Принципы, теги-ссылки и формат ответа не менялись.
+
+### For agents
+
+- Changed: `skills/robert-greene/SKILL.md` — frontmatter `model: opus` → `model: claude-opus-5-5`.
+- Migration: requires Claude Code ≥ 2.1.280 — older versions may reject the unknown model ID `claude-opus-5-5` when loading the skill; update Claude Code (`claude update`). The 1M context window is native to the model — no `[1m]` suffix.
+
 ## [1.0.2] — 2026-09-08
 
 ### Для человека
